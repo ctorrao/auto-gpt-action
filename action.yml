@@ -22,4 +22,5 @@ outputs:
 runs:
   using: docker
   image: nalbion/auto-gpt-action
-  args: "--ai_role ${{ inputs.role }} --openai_key ${{ inputs.openai_key }} --issue_body ${{ inputs.issue_body }} --issue_number ${{ inputs.issue_number }}"
+  args: 
+    - "--ai_role ${{ inputs.role }} --openai_key ${{ inputs.openai_key }} --issue_body ${{ inputs.issue_body }} --issue_number ${{ inputs.issue_number }}"
