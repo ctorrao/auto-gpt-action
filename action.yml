@@ -11,7 +11,7 @@ inputs:
   issue_number:
     description: The number of the issue.
     required: true
-  ai_role:
+  role:
     description: The role of the AI.
     required: false
     default: I want you to act as a software developer who is willing to review the issue described and commit appropriate fixes on a feature branch. When files are mentioned in the goals you will check to see if they exist, and modify them as necessary instead of creating new files. You will run the tests and iterate until all tests pass and then you will exit.
@@ -23,4 +23,4 @@ outputs:
 runs:
   using: docker
   image: nalbion/auto-gpt-action
-  args: "--ai_role ${{ inputs.ai_role }} --openai_key ${{ inputs.openai_key }} --issue_body ${{ inputs.issue_body }} --issue_number ${{ inputs.issue_number }}"
+  args: '--ai_role ${{ inputs.role }} --openai_key ${{ inputs.openai_key }} --issue_body ${{ inputs.issue_body }} --issue_number ${{ inputs.issue_number }}'
